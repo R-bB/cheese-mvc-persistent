@@ -1,20 +1,23 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org/">
 <head th:replace="fragments :: head"></head>
-<body class="container">
+    <body class="container">
 
-<h1 th:text="${title}">Default Title</h1>
+        <h1 th:text="${title}">Default Title</h1>
 
-<nav th:replace="fragments :: navigation"></nav>
+        <nav th:replace="fragments :: navigation"></nav>
 
-<br />
+        <br />
 
-<p th:unless="${categories} and ${categories.size()}">no categories :(</p>
-<h4 th:if="${categories} and ${categories.size()}">Categories</h4>
+        <p th:unless="${categories} and ${categories.size()}">no categories :(</p>
+        <h4 th:if="${categories} and ${categories.size()}">Categories</h4>
 
-<ul>
-    <li th:each="category : ${categories}" th:text="${category.name}"></li>
-</ul>
+        <ul>
+            <li th:each="category : ${categories}" th:text="${category.name}"></li>
+        </ul>
+        <nav>
+            <a href="/category/add">Add Category</a>
+        </nav>
 
-</body>
+    </body>
 </html>
